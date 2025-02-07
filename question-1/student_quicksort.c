@@ -11,14 +11,12 @@ typedef struct {
     int grade;
 } Student;
 
-// Swap function for QuickSort
 void swap(Student *a, Student *b) {
     Student temp = *a;
     *a = *b;
     *b = temp;
 }
 
-// Partition function for QuickSort
 int partition(Student arr[], int low, int high) {
     Student pivot = arr[high];
     int i = (low - 1);
@@ -33,7 +31,6 @@ int partition(Student arr[], int low, int high) {
     return (i + 1);
 }
 
-// QuickSort implementation
 void quickSort(Student arr[], int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
@@ -60,6 +57,7 @@ int main() {
            students[studentCount].lastName, 
            &students[studentCount].grade) == 3) {
         studentCount++;
+        if (studentCount >= MAX_STUDENTS) break;
     }
     fclose(inputFile);
 
@@ -83,4 +81,3 @@ int main() {
 
     return 0;
 }
-
